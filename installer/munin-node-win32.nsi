@@ -8,8 +8,8 @@
 !include "FileFunc.nsh"
 
 ; The name of the installer
-!define VERSION 1.6.1.0
-Name "Munin Node for Windows ${VERSION} (Beta)"
+!define VERSION 1.6.2.0
+Name "Munin Node for Windows ${VERSION}"
 
 ; The file to write
 OutFile "munin-node-win32-${VERSION}-installer.exe"
@@ -67,7 +67,7 @@ Section "Munin Node for Windows (required)"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "DisplayVersion" "${VERSION}"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "DisplayIcon " '"$INSTDIR\munin-node.exe"'
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "URLInfoAbout" "http://code.google.com/p/munin-node-win32/"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "URLInfoAbout" "https://github.com/munin-monitoring/munin-node-win32"
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Munin Node for Windows" "NoRepair" 1
   ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2
